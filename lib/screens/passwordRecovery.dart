@@ -12,8 +12,8 @@ class _RecoveryPageState extends State<RecoveryPage> {
     return Scaffold(
       body: WillPopScope(
         onWillPop: () async {
-          if (_key.currentState.canPop()) {
-            _key.currentState.pop();
+          if (_key.currentState!.canPop()) {
+            _key.currentState!.pop();
             return false;
           }
           return true;
@@ -27,7 +27,7 @@ class _RecoveryPageState extends State<RecoveryPage> {
                 borderRadius: BorderRadius.circular(10.0),
                 boxShadow: [
                   BoxShadow(
-                      color: Colors.grey[300],
+                      color: Colors.grey[300]!,
                       blurRadius: 4.0,
                       spreadRadius: 8.0),
                 ],
@@ -66,8 +66,8 @@ class _RecoveryPageState extends State<RecoveryPage> {
                             borderRadius: BorderRadius.circular(28.0),
                           ),
                           labelText: 'E-mail'),
-                      onSaved: (String input) {},
-                      validator: (String input) {
+                      onSaved: (String? input) {},
+                      validator: (String? input) {
                         return input == ''
                             ? 'Este campo não pode estar vázio'
                             : null;

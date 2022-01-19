@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'loginPage': (context) => LoginPage(),
         'recoveryPage': (context) => RecoveryPage(),
-        // 'serverList': (context) => ServerListItem(),
+        // 'serversList': (context) => ServerListItem(),
       },
     );
   }

@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import 'package:homeautomationapp/screens/passwordRecovery.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({Key key, this.title}) : super(key: key);
+  LoginPage({Key? key, this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   LoginPageState createState() => LoginPageState();
@@ -19,8 +19,8 @@ class LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: WillPopScope(
         onWillPop: () async {
-          if (_key.currentState.canPop()) {
-            _key.currentState.pop();
+          if (_key.currentState!.canPop()) {
+            _key.currentState!.pop();
             return false;
           }
           return true;
@@ -34,7 +34,7 @@ class LoginPageState extends State<LoginPage> {
                 borderRadius: BorderRadius.circular(10.0),
                 boxShadow: [
                   BoxShadow(
-                      color: Colors.grey[300],
+                      color: Colors.grey[300]!,
                       blurRadius: 4.0,
                       spreadRadius: 8.0),
                 ],
@@ -63,8 +63,8 @@ class LoginPageState extends State<LoginPage> {
                             borderRadius: BorderRadius.circular(28.0),
                           ),
                           labelText: 'E-mail'),
-                      onSaved: (String input) {},
-                      validator: (String input) {
+                      onSaved: (String? input) {},
+                      validator: (String? input) {
                         return input == ''
                             ? 'Este campo não pode estar vázio'
                             : null;
@@ -77,8 +77,8 @@ class LoginPageState extends State<LoginPage> {
                             borderRadius: BorderRadius.circular(28.0),
                           ),
                           labelText: 'Senha'),
-                      onSaved: (String input) {},
-                      validator: (String input) {
+                      onSaved: (String? input) {},
+                      validator: (String? input) {
                         return input == ''
                             ? 'Este campo não pode estar vázio'
                             : null;
@@ -121,7 +121,9 @@ class LoginPageState extends State<LoginPage> {
                               primary: Colors.white,
                               textStyle: const TextStyle(fontSize: 16),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+
+},
                             child: Text(
                               'Conectar',
                             ),

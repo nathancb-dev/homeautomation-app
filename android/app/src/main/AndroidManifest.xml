@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.homeautomationapp">
+    package="com.homeautomationapp">
    <application
         android:label="homeautomationapp"
         android:icon="@mipmap/ic_launcher">
