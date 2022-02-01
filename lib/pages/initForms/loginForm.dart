@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../home/home.dart';
 import 'registerForm.dart';
 
 void loginForm(context) {
@@ -144,7 +146,9 @@ void loginForm(context) {
                                   Color(0xfffacb0bd),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.toNamed("/home");
+                              },
                               child: const Text('Login'),
                             ),
                           ],
