@@ -1,28 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:homeautomationapp/screens/passwordRecovery.dart';
-
-import 'screens/loginPage.dart';
+import 'pages/init.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return new GetMaterialApp(
-      title: 'HomeAutomationApp',
+    return MaterialApp(
+      title: 'Home sAutomation App',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-        secondaryHeaderColor: Colors.grey[600],
+        primaryColor: Colors.white,
+        scaffoldBackgroundColor: Colors.grey[850],
       ),
-      home: LoginPage(),
-      routes: {
-        'loginPage': (context) => LoginPage(),
-        'recoveryPage': (context) => RecoveryPage(),
-        // 'serversList': (context) => ServerListItem(),
-      },
+      home: const Login(),
     );
   }
 }
