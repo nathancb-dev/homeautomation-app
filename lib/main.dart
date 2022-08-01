@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:get/get_navigation/src/routes/get_route.dart';
-import 'package:homeautomationapp/pages/home/home.dart';
-import 'package:homeautomationapp/pages/menu/menu.dart';
-
-import 'pages/init.dart';
+import 'package:por_de_sol/screens/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,20 +8,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Home Automation App',
+    return MaterialApp(
+      title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Colors.white,
-        scaffoldBackgroundColor: Colors.grey[850],
+        primarySwatch: Colors.blueGrey,
       ),
-      home: const Login(),
-      getPages: [
-        GetPage(name: '/', page: () => const Login()),
-        GetPage(name: '/home', page: () => Home()),
-        GetPage(name: '/rmenu', page: () => const MenuWidget()),
-      ],
+      home: const MainPage(),
     );
   }
 }
