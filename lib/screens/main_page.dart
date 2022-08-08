@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:por_de_sol/repositories/weather_repository.dart';
-import 'package:por_de_sol/screens/search/cubit/search_cubit.dart';
-import 'package:por_de_sol/screens/search/search_screen.dart';
-import 'package:por_de_sol/screens/sidebar/sidebarWidgets.dart';
-import 'package:por_de_sol/services/weather_http_client.dart';
+import '../repositories/weather_repository.dart';
+import 'search/cubit/search_cubit.dart';
+import 'search/search_screen.dart';
+import 'sidebar/sidebarWidgets.dart';
+import '../services/weather_http_client.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -16,6 +16,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
+    final PageController controller = PageController();
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
@@ -71,6 +72,7 @@ class _MainPageState extends State<MainPage> {
             ],
           ),
         ),
+        
       ),
     );
   }

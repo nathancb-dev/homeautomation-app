@@ -1,6 +1,6 @@
 import 'package:http/http.dart';
-import 'package:por_de_sol/models/weather_model.dart';
-import 'package:por_de_sol/services/weather_http_client.dart';
+import '../models/weather_model.dart';
+import '../services/weather_http_client.dart';
 
 class WeatherRepository {
   WeatherRepository(this._httpClient);

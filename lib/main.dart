@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:por_de_sol/screens/main_page.dart';
+import 'screens/main_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

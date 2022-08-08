@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:por_de_sol/repositories/weather_repository.dart';
-import 'package:por_de_sol/screens/search/cubit/search_cubit.dart';
-import 'package:por_de_sol/services/weather_http_client.dart';
+
+import 'cubit/search_cubit.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -10,7 +9,16 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: const Icon(Icons.arrow_back),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       appBar: AppBar(
+        centerTitle: true,
+        automaticallyImplyLeading: false,
         title: const Text('Busque sua cidade'),
       ),
       body: Padding(
@@ -42,21 +50,29 @@ class SearchScreen extends StatelessWidget {
 
                 if (state is SearchLoaded) {
                   return Expanded(
-                    child: ListView.separated(
-                      separatorBuilder: (context, index) => const Divider(),
-                      itemBuilder: (context, index) {
-                        final city = state.cities[index];
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.blueGrey.shade600,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: ListView.separated(
+                        separatorBuilder: (context, index) => const Divider(),
+                        itemBuilder: (context, index) {
+                          final city = state.cities[index];
 
-                        return ListTile(
-                          title: Text(
-                            city.name,
-                            style: const TextStyle(
-                              fontSize: 18,
+                          return ListTile(
+                            title: Text(
+                              city.name,
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                      itemCount: state.cities.length,
+                          );
+                        },
+                        itemCount: state.cities.length,
+                      ),
                     ),
                   );
                 }
